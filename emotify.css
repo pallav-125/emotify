@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #2b5876;
+    background: -webkit-linear-gradient(to right, #4e4376, #2b5876);
+    background: linear-gradient(to right, #4e4376, #2b5876);
+    font-family: sans-serif;
+}
+
+.chat-wrapper {
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #eeeeee;
+}
+
+h1 {
+    color: #eeeeee;
+}
+
+.emoji-box {
+	width: 100%;
+	height: 300px;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+textarea {
+	width: 100%;
+    height: 55px;
+    margin: 10px 0;
+    resize: none;
+}
+
+.emoticon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('emoticons.png') no-repeat;
+    position: relative;
+    top: 5px;
+}
+
+.emoticon-smile { background-position: 0 0; }
+.emoticon-heart { background-position: 0 -1827px; }
