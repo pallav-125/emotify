@@ -19,7 +19,7 @@
 	var emoticonPatterns = [];
 	var metachars = /[[\]{}()*+?.\\|^$\-,&#\s]/g;
 	var emojiBox;
-	var textarea = document.querySelector('textarea');
+	var textarea = document.querySelector('.textarea');
 	var emoticonsRegEx;
 
 	Emotify.prototype = {
@@ -59,17 +59,17 @@
 
 	textarea.addEventListener('keyup', parseText);
 	function parseText(e) {
-		if(e.keyCode !== 13) {
-			return;
-		}
-		var text = e.target.value;
+		var text = e.target.innerText;
 		var newText = text.replace(emoticonsRegEx, function(emoticonCode) {
 			return Emotify.prototype.addEmoticon(emoticonCode);
 		});
 		var chatThread = document.createElement("div")
 		chatThread.innerHTML = newText;
-		emojiBox.appendChild(chatThread);
-		textarea.value = '';
+
+		if(e.keyCode == 13) {
+			emojiBox.appendChild(chatThread);
+			textarea.innerHTML = '';
+		}
 	}
 
 }(window));
